@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#111827">
+<title>Cambodia Royale 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header><div class="brand">🇰🇭 CAMBODIA <b>ROYALE</b> <small>3D</small></div><div id="accountBadge">មិនទាន់ចូលគណនី</div></header>
+  <main>
+    <section id="authScreen" class="screen">
+      <div class="panel auth">
+        <div class="crest">⚔</div><h1>CAMBODIA ROYALE</h1><p>សូមចូលគណនីដើម្បីចាប់ផ្ដើម</p>
+        <label>ឈ្មោះអ្នកលេង</label><input id="username" maxlength="18" placeholder="បញ្ចូលឈ្មោះអ្នកលេង">
+        <label>ពាក្យសម្ងាត់</label><input id="password" type="password" placeholder="យ៉ាងតិច 4 តួ">
+        <div class="buttons"><button id="loginBtn" class="primary">ចូលគណនី</button><button id="createBtn">បង្កើតគណនី</button></div>
+        <p class="hint">គំរូសាកល្បង៖ គណនីរក្សាទុកក្នុង browser នេះប៉ុណ្ណោះ។ កុំប្រើពាក្យសម្ងាត់ពិត។</p>
+      </div>
+    </section>
+    <section id="serverScreen" class="screen hidden">
+      <div class="panel server-panel">
+        <h2>ជ្រើសរើស Server</h2><p>ចូលទៅកាន់បន្ទប់លេងរបស់ Cambodia Royale</p>
+        <div class="server-card"><div><strong>KH • ANGKOR REALM</strong><small>Server សាកល្បង • Asia</small></div><span id="serverCount">1 / 500</span></div>
+        <div class="meter"><div id="serverMeter"></div></div>
+        <button id="joinServerBtn" class="primary wide">ចូល Server</button>
+        <p class="hint">ចំនួន 500 នាក់បង្ហាញជាការក្លែងធ្វើក្នុង prototype។ Multiplayer ពិតត្រូវការម៉ាស៊ីនមេអនឡាញ។</p>
+      </div>
+    </section>
+    <section id="lobbyScreen" class="screen hidden">
+      <div id="lobbyCanvas" class="canvas"></div>
+      <div class="lobby-overlay">
+        <div class="lobby-top"><div><span class="eyebrow">SIEM REAP • CAMBODIA</span><h2>ANGKOR REALM</h2><p>ត្រៀមខ្លួនសម្រាប់ការរស់រានចុងក្រោយ</p></div><div class="player-tag">♟ <span id="lobbyName">Player</span><br><small>Lv. 1 • Rookie</small></div></div>
+        <div class="lobby-bottom"><div class="lobby-note">បង្វិលតួអង្គ៖ អូសលើផ្ទាំង ឬប្រើប៊ូតុង</div><div class="lobby-actions"><button id="rotateLeft">↶</button><button id="rotateRight">↷</button><button id="startBtn" class="primary start">START ▶</button></div></div>
+      </div>
+    </section>
+    <section id="gameScreen" class="screen hidden">
+      <div id="gameCanvas" class="canvas"></div>
+      <div class="hud">
+        <div class="hud-top"><div class="health"><span>❤️ HP</span><b id="hpText">100 / 100</b><div class="hpbar"><i id="hpBar"></i></div></div><div class="alive">👥 នៅរស់ <b id="aliveCount">60</b></div><button id="exitGame">ចេញ</button></div>
+        <div id="phaseMessage" class="phase">រង់ចាំអ្នកលេង 60 នាក់…</div>
+        <div id="dropControls" class="drop-controls hidden"><button id="dropBtn" class="primary">⬇ ចុះពីនាគ</button></div>
+        <div id="touchControls" class="touch-controls hidden">
+          <div class="joystick" id="joystick"><div class="stick" id="stick"></div></div>
+          <div class="right-controls"><button id="runBtn">🏃 រត់</button><button id="attackBtn" class="primary">⚔ វាយ / បាញ់</button><button id="lootBtn">＋ រើសអាវុធ</button></div>
+          <div class="weapon-bar"><span>អាវុធ (អតិបរមា 2)</span><div id="weaponSlots"><button class="slot selected">ដាវ</button><button class="slot">—</button></div><button id="switchWeapon">ប្ដូរ</button></div>
+        </div>
+        <div id="lootToast" class="toast hidden"></div>
+      </div>
+    </section>
+  </main>
+  <footer>CAMBODIA ROYALE 3D • Prototype build 0.1</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
